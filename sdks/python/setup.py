@@ -80,20 +80,15 @@ def get_version():
   return global_names['__version__']
 
 
-PACKAGE_NAME = 'apache-beam'
+PACKAGE_NAME = 'apache-beam-ai2'
 PACKAGE_VERSION = get_version()
-PACKAGE_DESCRIPTION = 'Apache Beam SDK for Python'
+PACKAGE_DESCRIPTION = 'A FORK! for testing with different dill version'
 PACKAGE_URL = 'https://beam.apache.org'
 PACKAGE_DOWNLOAD_URL = 'https://pypi.python.org/pypi/apache-beam'
-PACKAGE_AUTHOR = 'Apache Software Foundation'
-PACKAGE_EMAIL = 'dev@beam.apache.org'
+PACKAGE_AUTHOR = 'Aryeh Tiktinsky forked from Apache Software Foundation'
+PACKAGE_EMAIL = 'aryeht@allenai.org'
 PACKAGE_KEYWORDS = 'apache beam'
-PACKAGE_LONG_DESCRIPTION = '''
-Apache Beam is a unified programming model for both batch and streaming
-data processing, enabling efficient execution across diverse distributed
-execution engines and providing extensibility points for connecting to
-different technologies and user communities.
-'''
+PACKAGE_LONG_DESCRIPTION = ''
 
 RECOMMENDED_MIN_PIP_VERSION = '19.3.0'
 try:
@@ -226,7 +221,7 @@ if __name__ == '__main__':
         # using older version of dill. It is best to use the same version of
         # dill on client and server, therefore list of allowed versions is very
         # narrow. See: https://github.com/uqfoundation/dill/issues/341.
-        'dill>=0.3.1.1,<0.3.2',
+        'dill==0.3.6',
         # It is prudent to use the same version of pickler at job submission
         # and at runtime, therefore bounds need to be tight.
         # To avoid depending on an old dependency, update the minor version on
